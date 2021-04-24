@@ -1,6 +1,7 @@
 import React from "react";
 import "./page1.css";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Button = styled.button`
   padding: 15px;
@@ -17,23 +18,23 @@ const Button = styled.button`
 `;
 
 const Page1 = (props) => {
-  const {
-    active,setActive
-  } = props;
-
+  const { active, setActive } = props;
 
   return (
     <div className="bg_image">
       <div className="vert">
-      <Button onClick={() => setActive("go")}>ENTER SITE</Button>      
+        <Link to="/Login">
+          <Button>ENTER SITE</Button>
+        </Link>
       </div>
-      <div className="text">
+      <div className="texto">
         <h1>VOTE</h1>
         <h1>FOR</h1>
         <h1>YOUR</h1>
+        <h1>POSITION</h1>
       </div>
     </div>
   );
-}
+};
 
 export default Page1;

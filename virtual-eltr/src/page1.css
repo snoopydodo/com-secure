@@ -1,29 +1,30 @@
+
 .bg_image {
-    background-image: url("./picture1.jpg");
-    background-size: cover;
-    height: 100vh;
-    color: #f5f5f5;
-    font-size: 50px;
-  }
-  .vert {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-  .text {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .Navbar {
-    color: aliceblue;
-    padding: 10px;
-    background: bisque;
-  }
-  
+  background-image: url("./picture1.jpg");
+  background-size: cover;
+  height: 100vh;
+  color: #f5f5f5;
+  font-size: 100px;
+}
+.vert {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.texto {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 500px;
+}
+
+.Navbar {
+  color: aliceblue;
+  padding: 10px;
+  background: bisque;
+}

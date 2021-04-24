@@ -1,15 +1,15 @@
 import React, { Components, useState, useEffect } from "react";
-import { Route } from "react-router-dom";
 import fire from "./firebase";
 import Login from "./Login";
 import Page1 from "./Page1";
-import Page2 from "./Page2";
+import Votingto from "./Votingto";
+import Submit from "./Submit";
+import Auth from "./Auth";
+import Result from "./Result";
+
 import "./App.css";
 
-const Home = () => <h1>Home</h1>
-const About = () => <h1>About</h1>
-const Post = () => <h1>Post</h1>
-const Project = () => <h1>Project</h1>
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const App = () => {
   const [user, setUser] = useState("");
@@ -19,7 +19,6 @@ const App = () => {
   const [passwordError, setPasswordError] = useState("");
   const [hasAccount, setHasAccount] = useState(false);
   const [active, setActive] = useState("");
-
 
   const clearInputs = () => {
     setEmail("");
@@ -88,27 +87,68 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
-   
-      {user ? (
-        <Page2 handleLogout={handleLogout} />
-      ) : (
-        //<Page1 setActive = {setActive}/>,
-         <Login
-         email={email}
-         setEmail={setEmail}
-         password={password}
-         setPassword={setPassword}
-         handleLogin={handleLogin}
-         handleSignup={handleSignup}
-         hasAccount={hasAccount}
-         setHasAccount={setHasAccount}
-         emailError={emailError}
-         passwordError={passwordError}
-       />
-        
-      )}
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <Page1 />
+        </Route>
+        <Route path="/Login">
+          <Login
+            user={user}
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            handleLogin={handleLogin}
+            handleSignup={handleSignup}
+            hasAccount={hasAccount}
+            setHasAccount={setHasAccount}
+            emailError={emailError}
+            passwordError={passwordError}
+          />
+        </Route>
+        <Route path="/Signup">
+          <Login
+            user={user}
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            handleLogin={handleLogin}
+            handleSignup={handleSignup}
+            hasAccount={hasAccount}
+            setHasAccount={setHasAccount}
+            emailError={emailError}
+            passwordError={passwordError}
+          />
+        </Route>
+        <Route path="/auth">
+          <Auth
+            user={user}
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            handleLogin={handleLogin}
+            handleSignup={handleSignup}
+            hasAccount={hasAccount}
+            setHasAccount={setHasAccount}
+            emailError={emailError}
+            passwordError={passwordError}
+          />
+        </Route>
+        <Route path="/Votingto">
+          <Votingto />
+        </Route>
+
+        <Route path="/Submit">
+          <Submit />
+        </Route>
+        <Route path ="/result">
+          <Result/>
+        </Route>
+      </Switch>
+    </Router>
   );
-      }
+};
 export default App;

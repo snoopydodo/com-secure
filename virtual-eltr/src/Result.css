@@ -1,0 +1,48 @@
+.imgirl {
+  background-image: url("./girl.jpg");
+  margin-bottom: 100vh;
+  width: 50vh;
+  height: 50vh;
+}
+
+.imgboy {
+  background-image: url("./boy.jpg");
+  margin-left: 100vh;
+  width: 50vh;
+  height: 50vh;
+}
+
+.votetobe {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(
+    ellipse at left bottom,
+    rgb(221, 202, 224) 0%,
+    rgba(162, 140, 172, 0.9) 59%,
+    rgba(192, 149, 218, 0.9) 100%
+  );
+  /* background-image: url("./vote2.jpg");
+    background-size: cover; */
+    
+}
+
+.votetobe nav {
+  background: #b7a8dd;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.votetobe nav h2 {
+  color: rgb(44, 17, 17);
+}
+
+.votetobe nav button {
+  width: 86px;
+  padding: 8px 0;
+  background: #7a27b1cc;
+  
+}
+

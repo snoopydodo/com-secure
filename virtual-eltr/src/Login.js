@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./App.css";
 
 const Login = (props) => {
   const {
@@ -15,7 +17,8 @@ const Login = (props) => {
   } = props;
 
   return (
-    <section className="login">
+    <div className ="imgimg">
+      <section className="login">
       <div className="loginContainer">
         <label>Username</label>
         <input
@@ -36,25 +39,39 @@ const Login = (props) => {
         <p className="errorMsg">{passwordError}</p>
         <div className="btnContainer">
           {hasAccount ? (
-            <>
-              <button onClick={handleLogin}>Sign in</button>
-              <p>
-                Don't have an account?
-                <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span>
-              </p>
-            </>
+            <Link to="/auth">
+              <>
+                <button onClick={handleLogin}>Sign in</button>
+                <p>
+                  <Link to="/Signup">
+                    <span onClick={() => setHasAccount(!hasAccount)}>
+                      Sign up
+                    </span>
+                  </Link>
+                  Don't have an account?
+                </p>
+              </>
+            </Link>
           ) : (
-            <>
-              <button onClick={handleSignup}>Sign up</button>
-              <p>
-                Have an account?
-                <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span>
-              </p>
-            </>
+            <Link to="/Signup">
+              <>
+                <button onClick={handleSignup}>Sign up</button>
+                <Link to="/Login">
+                  <p>
+                    Have an account?
+                    <span onClick={() => setHasAccount(!hasAccount)}>
+                      Sign in
+                    </span>
+                  </p>
+                </Link>
+              </>
+            </Link>
           )}
         </div>
       </div>
     </section>
+    </div>
+    
   );
 };
 
